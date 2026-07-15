@@ -1,23 +1,24 @@
 {
   "name": "opensource-site",
   "title": "每天一个开源项目 — 调研报告集合站",
-  "status": "in_progress",
-  "phase": "implement",
+  "status": "completed",
+  "phase": "complete",
   "worktree_path": "/Users/jesse/Desktop/btrip/opensource-everyday",
   "sprint": {
-    "current": 1,
+    "current": 8,
     "total": 8
   },
   "tasks": [
-    {"id": 1, "name": "Project Scaffolding + Design System + Base Layout + Header", "status": "in_progress"},
-    {"id": 2, "name": "Content Collection + Sample Report", "status": "pending"},
-    {"id": 3, "name": "Homepage — Report List + Tag Filter", "status": "pending"},
-    {"id": 4, "name": "Report Detail Page — TOC + RatingBar", "status": "pending"},
-    {"id": 5, "name": "Search Page — Pagefind", "status": "pending"},
-    {"id": 6, "name": "Categories Archive Page", "status": "pending"},
-    {"id": 7, "name": "Leaderboard Page", "status": "pending"},
-    {"id": 8, "name": "About Page + GitHub Actions Deploy", "status": "pending"}
+    {"id": 1, "name": "Project Scaffolding + Design System + Base Layout + Header", "status": "completed"},
+    {"id": 2, "name": "Content Collection + Sample Report", "status": "completed"},
+    {"id": 3, "name": "Homepage — Report List + Tag Filter", "status": "completed"},
+    {"id": 4, "name": "Report Detail Page — TOC + RatingBar", "status": "completed"},
+    {"id": 5, "name": "Search Page — Pagefind", "status": "completed"},
+    {"id": 6, "name": "Categories Archive Page", "status": "completed"},
+    {"id": 7, "name": "Leaderboard Page", "status": "completed"},
+    {"id": 8, "name": "About Page + GitHub Actions Deploy", "status": "completed"}
   ],
   "created_at": "2026-07-15T10:00:00+08:00",
-  "updated_at": "2026-07-15T10:30:00+08:00"
+  "updated_at": "2026-07-15T13:55:00+08:00",
+  "completed_at": "2026-07-15T05:55:00Z"
 }
