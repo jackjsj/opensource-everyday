@@ -5,3 +5,4 @@
 - [x] Task 5: Search Page — Pagefind — commit 5984299
 - [x] Task 6: Categories Archive Page — commit f171d2b
 - [x] Task 7: Leaderboard Page — commit 56505c3
+- [x] Task 8: About Page + GitHub Actions Deploy — commit c76e077
