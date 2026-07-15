@@ -1,0 +1,51 @@
+---
+import { getCollection, render } from 'astro:content';
+import ReportLayout from '../../layouts/ReportLayout.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import RatingBar from '../../components/RatingBar.astro';
+
+export async function getStaticPaths() {
+  const reports = await getCollection('reports');
+  return reports.map(report => ({
+    params: { slug: report.id },
+    props: { report },
+  }));
+}
+
+const { report } = Astro.props;
+const { Content, headings } = await render(report);
+const { title, description, date, tags, githubUrl, language, license, stars, ratings } = report.data;
+
+// Add the "评分" heading manually — it's rendered by the template, not the Markdown
+const allHeadings = [...headings, { depth: 2, slug: 'ping-fen', text: '评分' }];
+---
+
+<ReportLayout title={title} description={description}>
+  <div class="report-detail">
+    <aside class="report-sidebar">
+      <TableOfContents headings={allHeadings} />
+    </aside>
+
+    <article class="report-content">
+      <h1>{title}</h1>
+
+      <div class="project-info">
+        <span>语言: {language}</span>
+        <span>License: {license}</span>
+        <span>Stars: {stars.toLocaleString()}</span>
+        <a href={githubUrl}>GitHub</a>
+      </div>
+
+      <Content />
+
+      <div class="ratings-section">
+        <h2 id="ping-fen">评分</h2>
+        <RatingBar label="活跃度" value={ratings.activity} />
+        <RatingBar label="文档质量" value={ratings.documentation} />
+        <RatingBar label="上手难度" value={ratings.easeOfUse} />
+        <RatingBar label="社区活跃度" value={ratings.community} />
+        <RatingBar label="综合评分" value={ratings.overall} />
+      </div>
+    </article>
+  </div>
+</ReportLayout>

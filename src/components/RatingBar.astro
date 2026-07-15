@@ -1,0 +1,17 @@
+---
+interface Props {
+  label: string;
+  value: number;
+}
+
+const { label, value } = Astro.props;
+const percentage = value * 10;
+---
+
+<div class="rating-bar">
+  <span class="rating-label">{label}</span>
+  <div class="bar-track">
+    <div class="bar-fill" style={`width: ${percentage}%`}></div>
+  </div>
+  <span class="rating-value">{value}/10</span>
+</div>

@@ -53,5 +53,22 @@ test('homepage lists reports', () => {
   assertIncludes(html, 'database', 'missing database tag');
 });
 
+// Task 4 checks
+test('report detail page exists', () => {
+  const html = readPage('reports/redis/index.html');
+  assertIncludes(html, 'Redis', 'detail page should have project title');
+  assertIncludes(html, '项目概览', 'missing overview section');
+  assertIncludes(html, '核心功能', 'missing core features section');
+  assertIncludes(html, '技术架构', 'missing tech architecture section');
+  assertIncludes(html, '快速上手', 'missing quick start section');
+  assertIncludes(html, '生态与社区', 'missing ecosystem section');
+  assertIncludes(html, '适用场景', 'missing use cases section');
+  assertIncludes(html, '优缺点总结', 'missing pros/cons section');
+  assertIncludes(html, '评分', 'missing ratings section');
+  assertIncludes(html, 'toc-link', 'missing TOC links');
+  assertIncludes(html, 'bar-fill', 'missing rating bars');
+  assertIncludes(html, 'BSD-3-Clause', 'missing license info');
+});
+
 console.log(failures === 0 ? '\nAll checks passed' : `\n${failures} check(s) failed`);
 process.exit(failures === 0 ? 0 : 1);

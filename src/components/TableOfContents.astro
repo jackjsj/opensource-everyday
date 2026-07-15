@@ -1,0 +1,39 @@
+---
+interface Props {
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { headings } = Astro.props;
+const tocItems = headings.filter(h => h.depth >= 2 && h.depth <= 3);
+---
+
+<nav class="toc" id="toc">
+  <ul>
+    {tocItems.map(item => (
+      <li class={`toc-level-${item.depth}`}>
+        <a href={`#${item.slug}`} class="toc-link" data-slug={item.slug}>{item.text}</a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script>
+  const links = document.querySelectorAll('.toc-link');
+  const headings = document.querySelectorAll('h2, h3');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        const link = document.querySelector(`.toc-link[data-slug="${id}"]`);
+        if (entry.isIntersecting && link) {
+          links.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    },
+    { rootMargin: '0% 0% -80% 0%' }
+  );
+
+  headings.forEach(h => observer.observe(h));
+</script>

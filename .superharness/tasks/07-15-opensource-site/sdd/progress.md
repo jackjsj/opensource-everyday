@@ -1,3 +1,3 @@
 - [x] Task 1: Project Scaffolding + Design System + Base Layout + Header — commit c3675e4
 - [x] Task 2: Content Collection + Sample Report — commit e350035 (QUALITY FAIL on placeholder test, user-approved skip)
-- [x] Task 3: Homepage — Report List + Tag Filter — commit 4878a52
+- [x] Task 3: Homepage — Report List + Tag Filter — commit d1075c6 (fixed base path + exact tag matching)
