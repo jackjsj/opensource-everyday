@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const reports = await getCollection('reports');
+
+const dimensions = [
+  { key: 'overall', label: '综合' },
+  { key: 'activity', label: '活跃度' },
+  { key: 'documentation', label: '文档质量' },
+  { key: 'easeofuse', label: '上手难度' },
+  { key: 'community', label: '社区活跃度' },
+];
+
+// Default sort by overall
+const sorted = [...reports].sort(
+  (a, b) => b.data.ratings.overall - a.data.ratings.overall
+);
+---
+
+<BaseLayout title="排行榜 — 每天一个开源项目">
+  <div class="leaderboard-page">
+    <h1>评分排行榜</h1>
+
+    <div class="dimension-tabs" id="dim-tabs">
+      {dimensions.map((dim, i) => (
+        <button class={`dim-tab ${i === 0 ? 'active' : ''}`} data-key={dim.key}>{dim.label}</button>
+      ))}
+    </div>
+
+    <table class="leaderboard-table" id="leaderboard-table">
+      <thead>
+        <tr>
+          <th>排名</th>
+          <th>项目</th>
+          <th>评分</th>
+          <th>日期</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sorted.map((report, i) => (
+          <tr
+            data-overall={report.data.ratings.overall}
+            data-activity={report.data.ratings.activity}
+            data-documentation={report.data.ratings.documentation}
+            data-easeofuse={report.data.ratings.easeOfUse}
+            data-community={report.data.ratings.community}
+          >
+            <td class={`rank ${i === 0 ? 'rank-1' : ''}`}>{i + 1}</td>
+            <td><a href={`${import.meta.env.BASE_URL}/reports/${report.id}/`}>{report.data.title}</a></td>
+            <td>{report.data.ratings.overall}</td>
+            <td>{report.data.date}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.dim-tab');
+    const tbody = document.querySelector('#leaderboard-table tbody');
+    const rows = tbody ? Array.from(tbody.querySelectorAll('tr')) : [];
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const key = tab.getAttribute('data-key');
+
+        rows.sort((a, b) => {
+          const aVal = Number(a.getAttribute('data-' + key));
+          const bVal = Number(b.getAttribute('data-' + key));
+          return bVal - aVal;
+        });
+
+        rows.forEach((row, i) => {
+          const rankCell = row.querySelector('.rank');
+          rankCell.textContent = String(i + 1);
+          rankCell.classList.toggle('rank-1', i === 0);
+          const scoreCell = row.querySelectorAll('td')[2];
+          scoreCell.textContent = row.getAttribute('data-' + key);
+          tbody.appendChild(row);
+        });
+      });
+    });
+  </script>
+</BaseLayout>

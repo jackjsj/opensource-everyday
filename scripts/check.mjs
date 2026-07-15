@@ -85,5 +85,14 @@ test('categories page exists', () => {
   assertIncludes(html, 'category-group', 'missing category group');
 });
 
+// Task 7 checks
+test('leaderboard page exists', () => {
+  const html = readPage('leaderboard/index.html');
+  assertIncludes(html, 'leaderboard-table', 'missing leaderboard table');
+  assertIncludes(html, 'dim-tab', 'missing dimension tabs');
+  assertIncludes(html, 'Redis', 'missing Redis entry');
+  assertIncludes(html, '综合', 'missing overall dimension tab');
+});
+
 console.log(failures === 0 ? '\nAll checks passed' : `\n${failures} check(s) failed`);
 process.exit(failures === 0 ? 0 : 1);
