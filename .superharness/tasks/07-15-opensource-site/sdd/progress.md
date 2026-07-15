@@ -4,3 +4,4 @@
 - [x] Task 4: Report Detail Page — TOC + RatingBar — commit 828473b
 - [x] Task 5: Search Page — Pagefind — commit 5984299
 - [x] Task 6: Categories Archive Page — commit f171d2b
+- [x] Task 7: Leaderboard Page — commit 56505c3

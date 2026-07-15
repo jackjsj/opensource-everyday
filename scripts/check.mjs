@@ -94,5 +94,19 @@ test('leaderboard page exists', () => {
   assertIncludes(html, '综合', 'missing overall dimension tab');
 });
 
+// Task 8 checks
+test('about page exists', () => {
+  const html = readPage('about/index.html');
+  assertIncludes(html, '每天一个开源项目', 'about page should mention site name');
+  assertIncludes(html, '调研', 'about page should mention research');
+});
+
+test('deploy workflow exists', () => {
+  const content = readFileSync('.github/workflows/deploy.yml', 'utf-8');
+  assertIncludes(content, 'github-pages', 'missing pages deployment');
+  assertIncludes(content, 'npm run build', 'missing build step');
+  assertIncludes(content, 'actions/upload-pages-artifact', 'missing artifact upload');
+});
+
 console.log(failures === 0 ? '\nAll checks passed' : `\n${failures} check(s) failed`);
 process.exit(failures === 0 ? 0 : 1);
