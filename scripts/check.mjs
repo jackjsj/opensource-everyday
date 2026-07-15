@@ -38,5 +38,11 @@ test('homepage exists', () => {
   assertIncludes(content, '首页', 'missing nav link');
 });
 
+// Task 2 checks
+test('content collection builds without error', () => {
+  const html = readPage('index.html');
+  assertIncludes(html, '<html', 'build should succeed with content config');
+});
+
 console.log(failures === 0 ? '\nAll checks passed' : `\n${failures} check(s) failed`);
 process.exit(failures === 0 ? 0 : 1);
