@@ -1,15 +1,15 @@
 {
   "name": "opensource-site",
   "title": "每天一个开源项目 — 调研报告集合站",
-  "status": "planning",
-  "phase": "plan",
-  "worktree_path": null,
+  "status": "in_progress",
+  "phase": "implement",
+  "worktree_path": "/Users/jesse/Desktop/btrip/opensource-everyday",
   "sprint": {
-    "current": 0,
+    "current": 1,
     "total": 8
   },
   "tasks": [
-    {"id": 1, "name": "Project Scaffolding + Design System + Base Layout + Header", "status": "pending"},
+    {"id": 1, "name": "Project Scaffolding + Design System + Base Layout + Header", "status": "in_progress"},
     {"id": 2, "name": "Content Collection + Sample Report", "status": "pending"},
     {"id": 3, "name": "Homepage — Report List + Tag Filter", "status": "pending"},
     {"id": 4, "name": "Report Detail Page — TOC + RatingBar", "status": "pending"},
