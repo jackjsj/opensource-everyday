@@ -1,0 +1,8 @@
+worktree_dir: .worktrees
+# Copy strategy controlled by using-git-worktrees skill:
+#   Copy: spec/ + config.yaml + workflow.md + active task directory
+#   Skip: other task directories, workspace/ logs
+#   Worktree gets its own independent .current-task pointer
+post_create: []
+verify:
+  []  # TODO: 根据你的项目补充 verify 命令 (e.g., xcodebuild test -scheme ...)

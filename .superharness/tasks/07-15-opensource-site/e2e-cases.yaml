@@ -1,0 +1,119 @@
+calibrated: false
+profile: pc
+
+cases:
+  - case_id: homepage-displays-report-list
+    goal: 首页展示报告列表，按日期倒序，每张卡片显示项目名、简介、日期、标签和评分
+    steps:
+      - open: /
+    expect:
+      - visible: { text: "每天一个开源项目" }
+      - visible: { text: "Redis" }
+      - text_present: "高性能内存键值数据库"
+      - text_present: "database"
+      - no_fatal_console_error: true
+
+  - case_id: homepage-tag-filter
+    goal: 点击标签筛选按钮可以过滤首页报告列表
+    steps:
+      - open: /
+      - click: { text: "database" }
+    expect:
+      - visible: { text: "Redis" }
+      - no_fatal_console_error: true
+
+  - case_id: report-detail-renders-all-sections
+    goal: 报告详情页完整渲染所有8个板块内容，左侧目录导航可见
+    steps:
+      - open: /reports/redis/
+    expect:
+      - visible: { text: "Redis" }
+      - visible: { text: "项目概览" }
+      - visible: { text: "核心功能" }
+      - visible: { text: "技术架构" }
+      - visible: { text: "快速上手" }
+      - visible: { text: "生态与社区" }
+      - visible: { text: "适用场景" }
+      - visible: { text: "优缺点总结" }
+      - visible: { text: "评分" }
+      - visible: { text: "BSD-3-Clause" }
+      - no_fatal_console_error: true
+
+  - case_id: report-detail-toc-visible
+    goal: 报告详情页左侧目录导航可见且包含各板块链接
+    steps:
+      - open: /reports/redis/
+    expect:
+      - visible: { text: "项目概览" }
+      - visible: { text: "核心功能" }
+      - no_fatal_console_error: true
+
+  - case_id: report-detail-rating-bars
+    goal: 报告详情页评分板块以条形图可视化展示各维度评分
+    steps:
+      - open: /reports/redis/
+    expect:
+      - visible: { text: "活跃度" }
+      - visible: { text: "文档质量" }
+      - visible: { text: "上手难度" }
+      - visible: { text: "社区活跃度" }
+      - visible: { text: "综合评分" }
+      - no_fatal_console_error: true
+
+  - case_id: search-page-functional
+    goal: 搜索页可以输入关键词搜索报告内容并显示结果
+    steps:
+      - open: /search/
+    expect:
+      - visible: { text: "搜索" }
+      - no_fatal_console_error: true
+
+  - case_id: categories-page-groups-by-tag
+    goal: 分类归档页按标签分组展示所有报告
+    steps:
+      - open: /categories/
+    expect:
+      - visible: { text: "database" }
+      - visible: { text: "Redis" }
+      - no_fatal_console_error: true
+
+  - case_id: leaderboard-sorts-by-rating
+    goal: 评分排行页按评分维度排序展示项目，可切换维度
+    steps:
+      - open: /leaderboard/
+    expect:
+      - visible: { text: "排行榜" }
+      - visible: { text: "Redis" }
+      - visible: { text: "综合" }
+      - visible: { text: "活跃度" }
+      - no_fatal_console_error: true
+
+  - case_id: leaderboard-dimension-switch
+    goal: 切换评分维度按钮后排行榜按新维度排序
+    steps:
+      - open: /leaderboard/
+      - click: { text: "活跃度" }
+    expect:
+      - visible: { text: "Redis" }
+      - no_fatal_console_error: true
+
+  - case_id: about-page-content
+    goal: 关于页展示站点目的、使用方式和报告生成流程说明
+    steps:
+      - open: /about/
+    expect:
+      - visible: { text: "关于" }
+      - visible: { text: "调研" }
+      - no_fatal_console_error: true
+
+  - case_id: header-navigation
+    goal: 站点头部导航包含首页、搜索、分类、排行、关于链接
+    steps:
+      - open: /
+    expect:
+      - visible: { text: "首页" }
+      - visible: { text: "搜索" }
+      - visible: { text: "分类" }
+      - visible: { text: "排行" }
+      - visible: { text: "关于" }
+      - no_fatal_console_error: true

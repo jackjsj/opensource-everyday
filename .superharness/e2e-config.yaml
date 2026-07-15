@@ -1,0 +1,34 @@
+schema_version: "e2e-config/v1"
+
+app:
+  # Detected candidates: "npm run dev" (from package.json scripts)
+  startup_cmd: "TODO"  # user confirms when QA runs pre-check
+  # Default: http://localhost:4321/opensource-everyday (Astro dev server with base path)
+  base_url: "TODO"  # user confirms when QA runs pre-check
+  # Routing mode: "history" (Astro uses history mode by default)
+  routing_mode: "TODO"  # "history" — user confirms when QA runs pre-check
+  startup_timeout_s: 30
+  env: {}
+  pre_start: []
+
+auth:
+  needs_auth: false
+  state_file: ".superharness/e2e-auth.json"
+
+browser:
+  headless: false
+  viewport: { width: 1920, height: 1080 }
+  device: null
+  color_scheme: null
+  ignore_https_errors: false
+
+mock:
+  service: null
+  static_routes: []
+
+profiles:
+  pc:
+    browser: { viewport: { width: 1920, height: 1080 } }
+  h5:
+    app: { base_url: "http://localhost:4321/opensource-everyday" }
+    browser: { device: "iPhone 14", viewport: { width: 390, height: 844 } }

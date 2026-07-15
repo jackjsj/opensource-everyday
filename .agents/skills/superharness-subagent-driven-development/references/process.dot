@@ -1,0 +1,62 @@
+digraph process {
+    rankdir=TB;
+
+    "Step 0: read task.json.worktree_path" [shape=box];
+    "worktree_path set?" [shape=diamond];
+    "superharness:using-git-worktrees, write back worktree_path" [shape=box];
+    "Pre-flight: scan plan for conflicts" [shape=box];
+    "Conflicts found?" [shape=diamond];
+    "Batch one question to the user" [shape=box];
+
+    subgraph cluster_per_task {
+        label="Per Task";
+        "Write task-brief-N.md" [shape=box];
+        "Dispatch implement (brief path only)" [shape=box];
+        "Implementer asks questions?" [shape=diamond];
+        "Answer, re-dispatch" [shape=box];
+        "Implementer implements + TDD + commits + writes report-N.md" [shape=box];
+        "Write review-package-N.md (brief/report paths + diff range)" [shape=box];
+        "Dispatch task-reviewer (single, review-package path)" [shape=box];
+        "SPEC_VERDICT + QUALITY_VERDICT both PASS?" [shape=diamond];
+        "Dispatch implementer to fix FINDINGS" [shape=box];
+        "Controller resolves UNVERIFIABLE items" [shape=box];
+        "Append progress.md ledger line" [shape=box];
+        "Per-Task E2E Checkpoint (batched)" [shape=diamond];
+        "E2E verify (per-task)" [shape=box];
+        "E2E fix loop" [shape=box];
+    }
+
+    "More tasks remain?" [shape=diamond];
+    "Dispatch task-reviewer for broad whole-branch review (most capable model)" [shape=box];
+    "superharness:finishing-a-development-branch" [shape=box style=filled fillcolor=lightgreen];
+
+    "Step 0: read task.json.worktree_path" -> "worktree_path set?";
+    "worktree_path set?" -> "superharness:using-git-worktrees, write back worktree_path" [label="no"];
+    "superharness:using-git-worktrees, write back worktree_path" -> "Pre-flight: scan plan for conflicts";
+    "worktree_path set?" -> "Pre-flight: scan plan for conflicts" [label="yes"];
+    "Pre-flight: scan plan for conflicts" -> "Conflicts found?";
+    "Conflicts found?" -> "Batch one question to the user" [label="yes"];
+    "Batch one question to the user" -> "Write task-brief-N.md";
+    "Conflicts found?" -> "Write task-brief-N.md" [label="no"];
+    "Write task-brief-N.md" -> "Dispatch implement (brief path only)";
+    "Dispatch implement (brief path only)" -> "Implementer asks questions?";
+    "Implementer asks questions?" -> "Answer, re-dispatch" [label="yes"];
+    "Answer, re-dispatch" -> "Dispatch implement (brief path only)";
+    "Implementer asks questions?" -> "Implementer implements + TDD + commits + writes report-N.md" [label="no"];
+    "Implementer implements + TDD + commits + writes report-N.md" -> "Write review-package-N.md (brief/report paths + diff range)";
+    "Write review-package-N.md (brief/report paths + diff range)" -> "Dispatch task-reviewer (single, review-package path)";
+    "Dispatch task-reviewer (single, review-package path)" -> "SPEC_VERDICT + QUALITY_VERDICT both PASS?";
+    "SPEC_VERDICT + QUALITY_VERDICT both PASS?" -> "Dispatch implementer to fix FINDINGS" [label="no"];
+    "Dispatch implementer to fix FINDINGS" -> "Write review-package-N.md (brief/report paths + diff range)" [label="re-review"];
+    "SPEC_VERDICT + QUALITY_VERDICT both PASS?" -> "Controller resolves UNVERIFIABLE items" [label="yes"];
+    "Controller resolves UNVERIFIABLE items" -> "Append progress.md ledger line";
+    "Append progress.md ledger line" -> "Per-Task E2E Checkpoint (batched)";
+    "Per-Task E2E Checkpoint (batched)" -> "E2E verify (per-task)" [label="eligible + user says yes"];
+    "Per-Task E2E Checkpoint (batched)" -> "More tasks remain?" [label="not eligible or user skips"];
+    "E2E verify (per-task)" -> "More tasks remain?" [label="pass"];
+    "E2E verify (per-task)" -> "E2E fix loop" [label="fail"];
+    "E2E fix loop" -> "E2E verify (per-task)" [label="re-verify"];
+    "More tasks remain?" -> "Write task-brief-N.md" [label="yes - next task"];
+    "More tasks remain?" -> "Dispatch task-reviewer for broad whole-branch review (most capable model)" [label="no"];
+    "Dispatch task-reviewer for broad whole-branch review (most capable model)" -> "superharness:finishing-a-development-branch";
+}

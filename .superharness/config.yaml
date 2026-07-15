@@ -1,0 +1,34 @@
+project:
+  name: opensource-everyday
+  type: auto  # auto-detected or: frontend | backend | fullstack | ai-agent
+
+platforms:
+  - codex
+
+# monorepo:
+#   packages:
+#     - frontend
+#     - backend
+
+observability:
+  trace: true
+  summary: true
+
+qa:
+  max_fix_rounds: 3
+  services: []
+  # services:
+  #   - name: my-qa-service
+  #     type: managed
+  #     endpoint: http://localhost:8080
+  #   - name: e2e-tests
+  #     type: autonomous
+  #     command: npm run qa:e2e
+  #     output: .superharness/tasks/{task}/qa-results-e2e.json
+  # Note: when e2e-gen generates E2E cases, it auto-registers an e2e-verify
+  # entry here (type: builtin). The qa command uses this entry to discover
+  # and run E2E verification. You can also add custom QA services above.
+
+_meta:
+  superharnessVersion: "1.2.0"
+  lastUpdatedAt: "2026-07-15T01:57:53.524Z"
