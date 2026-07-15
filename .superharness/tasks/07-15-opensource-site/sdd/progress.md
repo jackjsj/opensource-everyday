@@ -1,4 +1,6 @@
 - [x] Task 1: Project Scaffolding + Design System + Base Layout + Header — commit c3675e4
-- [x] Task 2: Content Collection + Sample Report — commit e350035 (QUALITY FAIL on placeholder test, user-approved skip)
+- [x] Task 2: Content Collection + Sample Report — commit e350035 (placeholder test skip approved)
 - [x] Task 3: Homepage — Report List + Tag Filter — commit d1075c6 (fixed base path + exact tag matching)
 - [x] Task 4: Report Detail Page — TOC + RatingBar — commit 828473b
+- [x] Task 5: Search Page — Pagefind — commit 5984299
+- [x] Task 6: Categories Archive Page — commit 5b8e3ce

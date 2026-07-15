@@ -77,5 +77,13 @@ test('search page exists', () => {
   assertIncludes(html, 'id="search"', 'missing search container');
 });
 
+// Task 6 checks
+test('categories page exists', () => {
+  const html = readPage('categories/index.html');
+  assertIncludes(html, 'database', 'missing database category');
+  assertIncludes(html, 'Redis', 'missing Redis under a category');
+  assertIncludes(html, 'category-group', 'missing category group');
+});
+
 console.log(failures === 0 ? '\nAll checks passed' : `\n${failures} check(s) failed`);
 process.exit(failures === 0 ? 0 : 1);
