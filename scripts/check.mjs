@@ -70,5 +70,12 @@ test('report detail page exists', () => {
   assertIncludes(html, 'BSD-3-Clause', 'missing license info');
 });
 
+// Task 5 checks
+test('search page exists', () => {
+  const html = readPage('search/index.html');
+  assertIncludes(html, 'pagefind', 'missing pagefind script');
+  assertIncludes(html, 'id="search"', 'missing search container');
+});
+
 console.log(failures === 0 ? '\nAll checks passed' : `\n${failures} check(s) failed`);
 process.exit(failures === 0 ? 0 : 1);

@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="搜索 — 每天一个开源项目">
+  <div class="search-page">
+    <h1>搜索报告</h1>
+    <div id="search"></div>
+    <link href={`${import.meta.env.BASE_URL}/pagefind/pagefind-ui.css`} rel="stylesheet">
+    <script src={`${import.meta.env.BASE_URL}/pagefind/pagefind-ui.js`}></script>
+    <script>
+      new PagefindUI({ element: "#search" });
+    </script>
+  </div>
+</BaseLayout>
