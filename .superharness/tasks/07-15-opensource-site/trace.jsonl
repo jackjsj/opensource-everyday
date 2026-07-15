@@ -7,3 +7,5 @@
 {"ts":"2026-07-15T02:54:11.259Z","phase":"implement","event":"user:prompt","detail":"Review .superharness/tasks/07-15-opensource-site/sdd/review-package-2.md\n\nWork from: /Users/jesse/Desktop/btrip/opensource-everyday"}
 {"ts":"2026-07-15T03:08:06.909Z","phase":"implement","event":"user:prompt","detail":"同意"}
 {"ts":"2026-07-15T03:09:05.989Z","phase":"implement","event":"user:prompt","detail":"You are implementing Task 3: Homepage — Report List + Tag Filter\n\n## Task Brief\n\nRead this first: .superharness/tasks/07-15-opensource-site/sdd/task-brief-3.md\n\n## Context\n\nTasks 1-2 are complete. The"}
+{"ts":"2026-07-15T03:11:38.457Z","phase":"implement","event":"user:prompt","detail":"Review .superharness/tasks/07-15-opensource-site/sdd/review-package-3.md\n\nWork from: /Users/jesse/Desktop/btrip/opensource-everyday"}
+{"ts":"2026-07-15T03:15:18.257Z","phase":"implement","event":"user:prompt","detail":"Fix two issues found in review:\n\n1. In `src/components/ReportCard.astro`, change the href to use `import.meta.env.BASE_URL`:\n   `href={`${import.meta.env.BASE_URL}reports/${report.id}/`}`\n\n2. In `src/"}

@@ -24,7 +24,7 @@ const { tags } = Astro.props;
       const tag = btn.getAttribute('data-tag');
       cards.forEach(card => {
         const cardTags = card.getAttribute('data-tags') || '';
-        if (tag === 'all' || cardTags.includes(tag)) {
+        if (tag === 'all' || cardTags.split(',').includes(tag)) {
           (card as HTMLElement).style.display = '';
         } else {
           (card as HTMLElement).style.display = 'none';

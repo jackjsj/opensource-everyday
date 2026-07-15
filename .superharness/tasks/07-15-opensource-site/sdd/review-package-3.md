@@ -1,0 +1,13 @@
+# Review Package for Task 3
+
+## Paths
+
+- Task brief: .superharness/tasks/07-15-opensource-site/sdd/task-brief-3.md
+- Implementer report: .superharness/tasks/07-15-opensource-site/sdd/report-3.md
+- Diff range: e350035..a5858ee
+
+## Global Constraints (from plan.md, verbatim)
+
+- All color/font/spacing values must come from CSS variables defined in `src/styles/global.css`
+- All reports are Markdown files in `src/content/reports/`
+- Site base path is `/opensource-everyday`

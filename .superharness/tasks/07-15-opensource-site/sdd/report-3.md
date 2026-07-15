@@ -36,9 +36,19 @@ Added Task 3 checks to `scripts/check.mjs` asserting that the built `index.html`
 - `npm test` — all 3 checks PASS (homepage exists, content collection builds, homepage lists reports).
 - Built HTML inspection confirms: 3 `report-card` occurrences, 5 `tag-btn` buttons, 1 `rating-badge`, and the card link resolves to `/reports/redis/`.
 
+## Post-review fixes
+
+Two review issues were addressed:
+
+1. `ReportCard.astro` now prefixes the card link with `import.meta.env.BASE_URL` so it resolves under the `/opensource-everyday` base path. The literal review instruction (`${import.meta.env.BASE_URL}reports/...`) produced `/opensource-everydayreports/...` because the configured `base` has no trailing slash; I added the separator (`/reports/...`) so the prefix actually works, yielding `/opensource-everyday/reports/redis/`.
+2. `TagFilter.astro` tag matching switched from substring (`cardTags.includes(tag)`) to exact token matching (`cardTags.split(',').includes(tag)`), preventing false positives like a `cache` tag matching `caching`.
+
+Rebuilt and re-ran `npm test` — all 3 checks still PASS.
+
 ## Commit
 
-`4878a52 feat: homepage with report list and tag filter`
+`4878a52 feat: homepage with report list and tag filter` (original)
+Follow-up: `fix: base path prefix in report cards and exact tag matching in filter`
 
 ## Self-review notes
 

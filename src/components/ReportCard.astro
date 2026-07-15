@@ -9,7 +9,7 @@ const { report } = Astro.props;
 const { title, description, date, tags, ratings } = report.data;
 ---
 
-<a href={`/reports/${report.id}/`} class="report-card">
+<a href={`${import.meta.env.BASE_URL}/reports/${report.id}/`} class="report-card">
   <div class="card-header">
     <h3>{title}</h3>
     <span class="rating-badge">{ratings.overall}</span>
