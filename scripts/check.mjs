@@ -44,5 +44,14 @@ test('content collection builds without error', () => {
   assertIncludes(html, '<html', 'build should succeed with content config');
 });
 
+// Task 3 checks
+test('homepage lists reports', () => {
+  const html = readPage('index.html');
+  assertIncludes(html, 'Redis', 'homepage should list Redis report');
+  assertIncludes(html, 'report-card', 'missing report card class');
+  assertIncludes(html, 'tag-btn', 'missing tag filter buttons');
+  assertIncludes(html, 'database', 'missing database tag');
+});
+
 console.log(failures === 0 ? '\nAll checks passed' : `\n${failures} check(s) failed`);
 process.exit(failures === 0 ? 0 : 1);

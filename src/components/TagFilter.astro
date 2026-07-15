@@ -1,0 +1,35 @@
+---
+interface Props {
+  tags: string[];
+}
+
+const { tags } = Astro.props;
+---
+
+<div class="tag-filter" id="tag-filter">
+  <button class="tag-btn active" data-tag="all">全部</button>
+  {tags.map(tag => (
+    <button class="tag-btn" data-tag={tag}>{tag}</button>
+  ))}
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.tag-btn');
+  const cards = document.querySelectorAll('.report-card-wrapper');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tag = btn.getAttribute('data-tag');
+      cards.forEach(card => {
+        const cardTags = card.getAttribute('data-tags') || '';
+        if (tag === 'all' || cardTags.includes(tag)) {
+          (card as HTMLElement).style.display = '';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

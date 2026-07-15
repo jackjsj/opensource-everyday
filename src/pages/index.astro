@@ -1,5 +1,14 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ReportCard from '../components/ReportCard.astro';
+import TagFilter from '../components/TagFilter.astro';
+
+const reports = (await getCollection('reports')).sort(
+  (a, b) => b.data.date.localeCompare(a.data.date)
+);
+
+const allTags = [...new Set(reports.flatMap(r => r.data.tags))].sort();
 ---
 
 <BaseLayout title="每天一个开源项目">
@@ -7,4 +16,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h1>每天一个开源项目</h1>
     <p>开源项目调研报告集合站</p>
   </section>
+
+  <TagFilter tags={allTags} />
+
+  <div class="report-grid">
+    {reports.map(report => (
+      <div class="report-card-wrapper" data-tags={report.data.tags.join(',')}>
+        <ReportCard report={report} />
+      </div>
+    ))}
+  </div>
 </BaseLayout>
