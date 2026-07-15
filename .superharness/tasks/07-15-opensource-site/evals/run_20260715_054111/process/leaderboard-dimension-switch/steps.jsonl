@@ -1,0 +1,2 @@
+{"seq":1,"action":"open","target":"\"/leaderboard/\"","ok":true,"duration_ms":1586,"screenshot":"screenshots/step-1.png"}
+{"seq":2,"action":"click","target":"{\"text\":\"活跃度\"}","ok":true,"duration_ms":2060,"screenshot":"screenshots/step-2.png"}

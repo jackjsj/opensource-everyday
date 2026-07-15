@@ -1,0 +1,52 @@
+- banner
+  - link "每天一个开源项目" [ref=e1]
+  - navigation
+    - link "首页" [ref=e7]
+    - link "搜索" [ref=e8]
+    - link "分类" [ref=e9]
+    - link "排行" [ref=e10]
+    - link "关于" [ref=e11]
+- main
+  - heading "分类归档" [level=1, ref=e2]
+  - generic
+    - heading "caching" [level=2, ref=e12]
+    - link "Redis 9 高性能内存键值数据库，支持多种数据结构 2026-07-15 database caching in-memory" [ref=e13]
+      - heading "Redis" [level=3, ref=e18]
+      - StaticText "9"
+      - paragraph
+        - StaticText "高性能内存键值数据库，支持多种数据结构"
+      - StaticText "2026-07-15"
+      - StaticText "database"
+      - StaticText "caching"
+      - StaticText "in-memory"
+  - generic
+    - heading "database" [level=2, ref=e14]
+    - link "Redis 9 高性能内存键值数据库，支持多种数据结构 2026-07-15 database caching in-memory" [ref=e15]
+      - heading "Redis" [level=3, ref=e19]
+      - StaticText "9"
+      - paragraph
+        - StaticText "高性能内存键值数据库，支持多种数据结构"
+      - StaticText "2026-07-15"
+      - StaticText "database"
+      - StaticText "caching"
+      - StaticText "in-memory"
+  - generic
+    - heading "in-memory" [level=2, ref=e16]
+    - link "Redis 9 高性能内存键值数据库，支持多种数据结构 2026-07-15 database caching in-memory" [ref=e17]
+      - heading "Redis" [level=3, ref=e20]
+      - StaticText "9"
+      - paragraph
+        - StaticText "高性能内存键值数据库，支持多种数据结构"
+      - StaticText "2026-07-15"
+      - StaticText "database"
+      - StaticText "caching"
+      - StaticText "in-memory"
+- generic
+  - button "Menu" [ref=e3]
+    - StaticText "Menu"
+  - button "Inspect" [ref=e4]
+    - StaticText "Inspect"
+  - button "Audit" [ref=e5]
+    - StaticText "Audit"
+  - button "Settings" [ref=e6]
+    - StaticText "Settings"

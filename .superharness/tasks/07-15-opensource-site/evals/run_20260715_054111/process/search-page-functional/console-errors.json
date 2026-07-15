@@ -1,0 +1,1 @@
+{"success":true,"data":{"errors":[{"column":0,"line":0,"text":"ReferenceError: PagefindUI is not defined\n    at http://localhost:4321/src/pages/search.astro?astro&type=script&index=0&lang.ts:1:1","url":null}]},"error":null}

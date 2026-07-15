@@ -1,0 +1,33 @@
+{
+  "schema_version": "eval-result/v1",
+  "run": {
+    "run_id": "run_20260715_054111",
+    "task_id": "07-15-opensource-site",
+    "attempt_id": "attempt_1",
+    "verdict": "pass",
+    "error": null,
+    "meta": {
+      "started_at": "2026-07-15T05:42:20.191Z",
+      "duration_ms": 54494,
+      "runner": "agent-browser",
+      "profile": "pc",
+      "headless": false
+    },
+    "projects": [
+      {
+        "project": ".",
+        "provider": "frontend-e2e",
+        "verdict": "pass",
+        "gate": {
+          "type": "all-hard-gates"
+        },
+        "summary": {
+          "total": 11,
+          "passed": 11,
+          "failed": 0
+        }
+      }
+    ]
+  },
+  "issues": []
+}

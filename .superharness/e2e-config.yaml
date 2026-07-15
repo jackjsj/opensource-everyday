@@ -1,15 +1,12 @@
 schema_version: "e2e-config/v1"
 
 app:
-  # Detected candidates: "npm run dev" (from package.json scripts)
-  startup_cmd: "TODO"  # user confirms when QA runs pre-check
-  # Default: http://localhost:4321/opensource-everyday (Astro dev server with base path)
-  base_url: "TODO"  # user confirms when QA runs pre-check
-  # Routing mode: "history" (Astro uses history mode by default)
-  routing_mode: "TODO"  # "history" — user confirms when QA runs pre-check
+  startup_cmd: "npm run dev"
+  base_url: "http://localhost:4321/opensource-everyday"
+  routing_mode: "history"
   startup_timeout_s: 30
   env: {}
-  pre_start: []
+  pre_start: ["npm install"]
 
 auth:
   needs_auth: false

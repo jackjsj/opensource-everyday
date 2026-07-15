@@ -1,0 +1,36 @@
+- banner
+  - link "每天一个开源项目" [ref=e1]
+  - navigation
+    - link "首页" [ref=e10]
+    - link "搜索" [ref=e11]
+    - link "分类" [ref=e12]
+    - link "排行" [ref=e13]
+    - link "关于" [ref=e14]
+- main
+  - heading "关于" [level=1, ref=e2]
+  - heading "站点目的" [level=2, ref=e3]
+  - paragraph
+    - StaticText "每天一个开源项目是一个开源项目调研报告集合站。每份报告系统化地分析一个开源项目的功能、架构、生态和适用场景，帮助开发者快速了解和评估开源项目。"
+  - heading "如何使用" [level=2, ref=e4]
+  - paragraph
+    - StaticText "在首页浏览所有报告，按标签筛选感兴趣的项目。使用搜索功能通过关键词查找报告。分类页按技术领域归档，排行榜页按评分维度排序。"
+  - paragraph
+    - StaticText "每份报告页面可直接分享链接给同事或朋友。"
+  - heading "报告生成流程" [level=2, ref=e5]
+  - paragraph
+    - StaticText "1. 提出一个开源项目名称"
+  - paragraph
+    - StaticText "2. AI 完成调研，生成结构化报告"
+  - paragraph
+    - StaticText "3. 报告添加到站点并自动部署上线"
+  - paragraph
+    - StaticText "4. 可在站点查阅和分享"
+- generic
+  - button "Menu" [ref=e6]
+    - StaticText "Menu"
+  - button "Inspect" [ref=e7]
+    - StaticText "Inspect"
+  - button "Audit" [ref=e8]
+    - StaticText "Audit"
+  - button "Settings" [ref=e9]
+    - StaticText "Settings"

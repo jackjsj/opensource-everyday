@@ -1,0 +1,413 @@
+{
+  "schema_version": "eval-process/v1",
+  "config": {
+    "base_url": "http://localhost:4321/opensource-everyday",
+    "headless": false
+  },
+  "cases": [
+    {
+      "case_id": "homepage-displays-report-list",
+      "result": "pass",
+      "duration_ms": 5903,
+      "dir": "homepage-displays-report-list",
+      "artifacts": [
+        {
+          "file": "console-errors.json",
+          "bytes": 50
+        },
+        {
+          "file": "dom-snapshot.txt",
+          "bytes": 1136
+        },
+        {
+          "file": "network-failed.json",
+          "bytes": 749
+        },
+        {
+          "file": "screenshots/before-assert.png",
+          "bytes": 44714
+        },
+        {
+          "file": "screenshots/step-1.png",
+          "bytes": 42576
+        },
+        {
+          "file": "steps.jsonl",
+          "bytes": 110
+        },
+        {
+          "file": "summary.md",
+          "bytes": 117
+        }
+      ]
+    },
+    {
+      "case_id": "homepage-tag-filter",
+      "result": "pass",
+      "duration_ms": 6211,
+      "dir": "homepage-tag-filter",
+      "artifacts": [
+        {
+          "file": "console-errors.json",
+          "bytes": 50
+        },
+        {
+          "file": "dom-snapshot.txt",
+          "bytes": 1136
+        },
+        {
+          "file": "network-failed.json",
+          "bytes": 749
+        },
+        {
+          "file": "screenshots/before-assert.png",
+          "bytes": 45371
+        },
+        {
+          "file": "screenshots/step-1.png",
+          "bytes": 44714
+        },
+        {
+          "file": "screenshots/step-2.png",
+          "bytes": 44903
+        },
+        {
+          "file": "steps.jsonl",
+          "bytes": 239
+        },
+        {
+          "file": "summary.md",
+          "bytes": 63
+        }
+      ]
+    },
+    {
+      "case_id": "report-detail-renders-all-sections",
+      "result": "pass",
+      "duration_ms": 6282,
+      "dir": "report-detail-renders-all-sections",
+      "artifacts": [
+        {
+          "file": "console-errors.json",
+          "bytes": 50
+        },
+        {
+          "file": "dom-snapshot.txt",
+          "bytes": 8842
+        },
+        {
+          "file": "network-failed.json",
+          "bytes": 749
+        },
+        {
+          "file": "screenshots/before-assert.png",
+          "bytes": 166598
+        },
+        {
+          "file": "screenshots/step-1.png",
+          "bytes": 166598
+        },
+        {
+          "file": "steps.jsonl",
+          "bytes": 124
+        },
+        {
+          "file": "summary.md",
+          "bytes": 85
+        }
+      ]
+    },
+    {
+      "case_id": "report-detail-toc-visible",
+      "result": "pass",
+      "duration_ms": 3934,
+      "dir": "report-detail-toc-visible",
+      "artifacts": [
+        {
+          "file": "console-errors.json",
+          "bytes": 50
+        },
+        {
+          "file": "dom-snapshot.txt",
+          "bytes": 8842
+        },
+        {
+          "file": "network-failed.json",
+          "bytes": 749
+        },
+        {
+          "file": "screenshots/before-assert.png",
+          "bytes": 166598
+        },
+        {
+          "file": "screenshots/step-1.png",
+          "bytes": 166598
+        },
+        {
+          "file": "steps.jsonl",
+          "bytes": 124
+        },
+        {
+          "file": "summary.md",
+          "bytes": 72
+        }
+      ]
+    },
+    {
+      "case_id": "report-detail-rating-bars",
+      "result": "pass",
+      "duration_ms": 4807,
+      "dir": "report-detail-rating-bars",
+      "artifacts": [
+        {
+          "file": "console-errors.json",
+          "bytes": 50
+        },
+        {
+          "file": "dom-snapshot.txt",
+          "bytes": 8842
+        },
+        {
+          "file": "network-failed.json",
+          "bytes": 749
+        },
+        {
+          "file": "screenshots/before-assert.png",
+          "bytes": 166598
+        },
+        {
+          "file": "screenshots/step-1.png",
+          "bytes": 166598
+        },
+        {
+          "file": "steps.jsonl",
+          "bytes": 124
+        },
+        {
+          "file": "summary.md",
+          "bytes": 78
+        }
+      ]
+    },
+    {
+      "case_id": "search-page-functional",
+      "result": "pass",
+      "duration_ms": 3906,
+      "dir": "search-page-functional",
+      "artifacts": [
+        {
+          "file": "console-errors.json",
+          "bytes": 224
+        },
+        {
+          "file": "dom-snapshot.txt",
+          "bytes": 497
+        },
+        {
+          "file": "network-failed.json",
+          "bytes": 2228
+        },
+        {
+          "file": "screenshots/before-assert.png",
+          "bytes": 21101
+        },
+        {
+          "file": "screenshots/step-1.png",
+          "bytes": 21101
+        },
+        {
+          "file": "steps.jsonl",
+          "bytes": 117
+        },
+        {
+          "file": "summary.md",
+          "bytes": 72
+        }
+      ]
+    },
+    {
+      "case_id": "categories-page-groups-by-tag",
+      "result": "pass",
+      "duration_ms": 3925,
+      "dir": "categories-page-groups-by-tag",
+      "artifacts": [
+        {
+          "file": "console-errors.json",
+          "bytes": 224
+        },
+        {
+          "file": "dom-snapshot.txt",
+          "bytes": 1907
+        },
+        {
+          "file": "network-failed.json",
+          "bytes": 2228
+        },
+        {
+          "file": "screenshots/before-assert.png",
+          "bytes": 61327
+        },
+        {
+          "file": "screenshots/step-1.png",
+          "bytes": 61327
+        },
+        {
+          "file": "steps.jsonl",
+          "bytes": 121
+        },
+        {
+          "file": "summary.md",
+          "bytes": 57
+        }
+      ]
+    },
+    {
+      "case_id": "leaderboard-sorts-by-rating",
+      "result": "pass",
+      "duration_ms": 4445,
+      "dir": "leaderboard-sorts-by-rating",
+      "artifacts": [
+        {
+          "file": "console-errors.json",
+          "bytes": 224
+        },
+        {
+          "file": "dom-snapshot.txt",
+          "bytes": 1065
+        },
+        {
+          "file": "network-failed.json",
+          "bytes": 2228
+        },
+        {
+          "file": "screenshots/before-assert.png",
+          "bytes": 32499
+        },
+        {
+          "file": "screenshots/step-1.png",
+          "bytes": 32499
+        },
+        {
+          "file": "steps.jsonl",
+          "bytes": 122
+        },
+        {
+          "file": "summary.md",
+          "bytes": 75
+        }
+      ]
+    },
+    {
+      "case_id": "leaderboard-dimension-switch",
+      "result": "pass",
+      "duration_ms": 6350,
+      "dir": "leaderboard-dimension-switch",
+      "artifacts": [
+        {
+          "file": "console-errors.json",
+          "bytes": 224
+        },
+        {
+          "file": "dom-snapshot.txt",
+          "bytes": 1066
+        },
+        {
+          "file": "network-failed.json",
+          "bytes": 2228
+        },
+        {
+          "file": "screenshots/before-assert.png",
+          "bytes": 33357
+        },
+        {
+          "file": "screenshots/step-1.png",
+          "bytes": 32499
+        },
+        {
+          "file": "screenshots/step-2.png",
+          "bytes": 33357
+        },
+        {
+          "file": "steps.jsonl",
+          "bytes": 252
+        },
+        {
+          "file": "summary.md",
+          "bytes": 63
+        }
+      ]
+    },
+    {
+      "case_id": "about-page-content",
+      "result": "pass",
+      "duration_ms": 4089,
+      "dir": "about-page-content",
+      "artifacts": [
+        {
+          "file": "console-errors.json",
+          "bytes": 224
+        },
+        {
+          "file": "dom-snapshot.txt",
+          "bytes": 1479
+        },
+        {
+          "file": "network-failed.json",
+          "bytes": 2228
+        },
+        {
+          "file": "screenshots/before-assert.png",
+          "bytes": 85100
+        },
+        {
+          "file": "screenshots/step-1.png",
+          "bytes": 85100
+        },
+        {
+          "file": "steps.jsonl",
+          "bytes": 116
+        },
+        {
+          "file": "summary.md",
+          "bytes": 78
+        }
+      ]
+    },
+    {
+      "case_id": "header-navigation",
+      "result": "pass",
+      "duration_ms": 4642,
+      "dir": "header-navigation",
+      "artifacts": [
+        {
+          "file": "console-errors.json",
+          "bytes": 224
+        },
+        {
+          "file": "dom-snapshot.txt",
+          "bytes": 1136
+        },
+        {
+          "file": "network-failed.json",
+          "bytes": 2228
+        },
+        {
+          "file": "screenshots/before-assert.png",
+          "bytes": 44714
+        },
+        {
+          "file": "screenshots/step-1.png",
+          "bytes": 44714
+        },
+        {
+          "file": "steps.jsonl",
+          "bytes": 110
+        },
+        {
+          "file": "summary.md",
+          "bytes": 81
+        }
+      ]
+    }
+  ]
+}

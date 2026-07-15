@@ -1,0 +1,19 @@
+- banner
+  - link "每天一个开源项目" [ref=e1]
+  - navigation
+    - link "首页" [ref=e7]
+    - link "搜索" [ref=e8]
+    - link "分类" [ref=e9]
+    - link "排行" [ref=e10]
+    - link "关于" [ref=e11]
+- main
+  - heading "搜索报告" [level=1, ref=e2]
+- generic
+  - button "Menu" [ref=e3]
+    - StaticText "Menu"
+  - button "Inspect" [ref=e4]
+    - StaticText "Inspect"
+  - button "Audit" [ref=e5]
+    - StaticText "Audit"
+  - button "Settings" [ref=e6]
+    - StaticText "Settings"

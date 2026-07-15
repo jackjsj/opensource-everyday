@@ -1,0 +1,33 @@
+
+> opensource-everyday@0.0.1 dev
+> astro dev
+
+13:41:14 [types] Generated 0ms
+13:41:14 [content] Syncing content
+13:41:14 [content] Synced content
+13:41:14 [vite] Re-optimizing dependencies because vite config has changed
+
+ astro  v5.18.2 ready in 508 ms
+
+┃ Local    http://localhost:4321/opensource-everyday
+┃ Network  use --host to expose
+
+13:41:14 watching for file changes...
+13:41:14 [200] / 17ms
+
+ update  ▶ New version of Astro available: 7.0.9
+  Run npx @astrojs/upgrade to update
+
+13:41:22 [200] / 4ms
+13:41:29 [200] / 3ms
+13:41:35 [200] /reports/redis/ 6ms
+13:41:42 [200] /reports/redis/ 2ms
+13:41:46 [200] /reports/redis/ 3ms
+13:41:51 [200] /search/ 2ms
+13:41:51 [404] /pagefind/pagefind-ui.css 1ms
+13:41:51 [404] /pagefind/pagefind-ui.js 1ms
+13:41:55 [200] /categories/ 2ms
+13:42:00 [200] /leaderboard/ 2ms
+13:42:04 [200] /leaderboard/ 2ms
+13:42:11 [200] /about/ 2ms
+13:42:15 [200] / 2ms

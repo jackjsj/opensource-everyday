@@ -1,0 +1,38 @@
+- banner
+  - link "每天一个开源项目" [ref=e1]
+  - navigation
+    - link "首页" [ref=e7]
+    - link "搜索" [ref=e8]
+    - link "分类" [ref=e9]
+    - link "排行" [ref=e10]
+    - link "关于" [ref=e11]
+- main
+  - heading "评分排行榜" [level=1, ref=e2]
+  - generic
+    - button "综合" [ref=e12]
+    - button "活跃度" [ref=e13]
+    - button "文档质量" [ref=e14]
+    - button "上手难度" [ref=e15]
+    - button "社区活跃度" [ref=e16]
+  - table
+    - rowgroup
+      - row
+        - columnheader "排名" [ref=e21]
+        - columnheader "项目" [ref=e22]
+        - columnheader "评分" [ref=e23]
+        - columnheader "日期" [ref=e24]
+    - row
+      - cell "1" [ref=e17]
+      - cell "Redis" [ref=e18]
+        - link "Redis" [ref=e25]
+      - cell "9" [ref=e19]
+      - cell "2026-07-15" [ref=e20]
+- generic
+  - button "Menu" [ref=e3]
+    - StaticText "Menu"
+  - button "Inspect" [ref=e4]
+    - StaticText "Inspect"
+  - button "Audit" [ref=e5]
+    - StaticText "Audit"
+  - button "Settings" [ref=e6]
+    - StaticText "Settings"

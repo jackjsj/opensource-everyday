@@ -1,0 +1,2 @@
+{"seq":1,"action":"open","target":"\"/\"","ok":true,"duration_ms":1605,"screenshot":"screenshots/step-1.png"}
+{"seq":2,"action":"click","target":"{\"text\":\"database\"}","ok":true,"duration_ms":1889,"screenshot":"screenshots/step-2.png"}

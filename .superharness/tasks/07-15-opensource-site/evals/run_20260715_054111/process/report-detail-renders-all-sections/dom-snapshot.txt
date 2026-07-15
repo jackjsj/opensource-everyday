@@ -1,0 +1,237 @@
+- banner
+  - link "每天一个开源项目" [ref=e1]
+  - navigation
+    - link "首页" [ref=e6]
+    - link "搜索" [ref=e7]
+    - link "分类" [ref=e8]
+    - link "排行" [ref=e9]
+    - link "关于" [ref=e10]
+- main
+  - complementary
+    - navigation
+      - list
+        - listitem [level=1]
+          - link "项目概览" [ref=e24]
+        - listitem [level=1]
+          - link "核心功能" [ref=e25]
+        - listitem [level=1]
+          - link "技术架构" [ref=e26]
+        - listitem [level=1]
+          - link "快速上手" [ref=e27]
+        - listitem [level=1]
+          - link "生态与社区" [ref=e28]
+        - listitem [level=1]
+          - link "适用场景" [ref=e29]
+        - listitem [level=1]
+          - link "优缺点总结" [ref=e30]
+        - listitem [level=1]
+          - link "评分" [ref=e31]
+  - article
+    - heading "Redis" [level=1, ref=e11]
+    - StaticText "语言: C"
+    - StaticText "License: BSD-3-Clause"
+    - StaticText "Stars: 67,000"
+    - link "GitHub" [ref=e12]
+    - heading "项目概览" [level=2, ref=e13]
+    - paragraph
+      - StaticText "Redis（Remote Dictionary Server）是一个开源的、基于内存的键值数据存储，由 Salvatore Sanfilippo 于 2009 年创建。它常被用作数据库、缓存、消息队列和流处理引擎。项目使用 C 语言编写，以极高的性能著称，单实例每秒可处理十万级读写操作。"
+    - list
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "GitHub: "
+        - link "https://github.com/redis/redis" [ref=e23]
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "语言: C"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "License: BSD-3-Clause"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "Stars: 67k+"
+    - heading "核心功能" [level=2, ref=e14]
+    - paragraph
+      - StaticText "Redis 不仅仅是简单的键值存储，它支持多种数据结构："
+    - list
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "Strings"
+        - StaticText "：二进制安全的字符串，最大 512MB"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "Hashes"
+        - StaticText "：字段-值映射，适合存储对象"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "Lists"
+        - StaticText "：有序字符串列表，支持从两端 push/pop"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "Sets"
+        - StaticText "：无序唯一元素集合，支持交并差运算"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "Sorted Sets"
+        - StaticText "：带分数的有序集合，适合排行榜场景"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "Streams"
+        - StaticText "：日志型数据结构，支持消费组"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "Pub/Sub"
+        - StaticText "：发布订阅消息模式"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "过期与淘汰"
+        - StaticText "：可对 key 设置 TTL，支持多种淘汰策略"
+    - heading "技术架构" [level=2, ref=e15]
+    - paragraph
+      - StaticText "Redis 采用单线程事件循环架构（Redis 6.0 后网络 IO 支持多线程，但命令执行仍为单线程）："
+    - list
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "单线程模型"
+        - StaticText "：避免锁竞争和上下文切换，简化并发处理"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "IO 多路复用"
+        - StaticText "：使用 epoll/kselect 实现高并发网络连接"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "内存存储"
+        - StaticText "：所有数据常驻内存，磁盘持久化为 RDB 快照和 AOF 日志"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "RESP 协议"
+        - StaticText "：自定义的二进制安全文本协议，简单高效"
+    - heading "快速上手" [level=2, ref=e16]
+    - paragraph
+      - StaticText "使用 Docker 启动 Redis："
+    - generic [ref=e17] focusable [tabindex]
+      - code
+        - StaticText "docker run -d --name redis -p 6379:6379 redis:latest"
+    - paragraph
+      - StaticText "连接并测试："
+    - generic [ref=e18] focusable [tabindex]
+      - code
+        - StaticText "docker exec -it redis redis-cli\n> SET hello world\n> GET hello\n\"world\"\n> ZADD leaderboard 100 alice 200 bob\n> ZREVRANGE leaderboard 0 -1 WITHSCORES\n1) \"bob\"\n2) \"200\"\n3) \"alice\"\n4) \"100\""
+    - paragraph
+      - StaticText "上手难度：低。基本操作直观，官方文档和交互式教程完善。"
+    - heading "生态与社区" [level=2, ref=e19]
+    - list
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "贡献者"
+        - StaticText "：600+ 贡献者，核心维护由 Redis Ltd 团队主导"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "活跃度"
+        - StaticText "：GitHub 上持续高频提交，定期发布新版本"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "主要使用者"
+        - StaticText "：Twitter、GitHub、Stack Overflow、Instagram 等大型互联网公司"
+      - listitem [level=1]
+        - ListMarker "• "
+        - strong
+          - StaticText "相关项目"
+        - StaticText "：Redis Sentinel（哨兵高可用）、Redis Cluster（集群分片）、RedisStack（搜索/JSON/时间序列模块）"
+    - heading "适用场景" [level=2, ref=e20]
+    - paragraph
+      - strong
+        - StaticText "适合："
+    - list
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "缓存层（热数据加速、Session 存储）"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "排行榜/计数器（利用 Sorted Set 原子操作）"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "消息队列（List/Stream 轻量级队列）"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "实时分析（位图、HyperLogLog）"
+    - paragraph
+      - strong
+        - StaticText "不适合："
+    - list
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "需要复杂查询和关系运算的场景（用 SQL 数据库）"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "数据量远超内存容量的场景（内存成本高）"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "对数据持久性要求极高且不能接受秒级丢失的场景"
+    - heading "优缺点总结" [level=2, ref=e21]
+    - paragraph
+      - strong
+        - StaticText "优势："
+    - list
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "极致性能，单线程单实例 10 万+ QPS"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "数据结构丰富，覆盖常见业务场景"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "社区生态成熟，文档完善"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "部署简单，开箱即用"
+    - paragraph
+      - strong
+        - StaticText "局限："
+    - list
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "内存容量限制数据规模，成本较高"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "单线程模型不适合 CPU 密集型计算"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "事务支持有限（无回滚）"
+      - listitem [level=1]
+        - ListMarker "• "
+        - StaticText "集群方案配置复杂度高"
+    - heading "评分" [level=2, ref=e22]
+    - StaticText "活跃度"
+    - StaticText "10/10"
+    - StaticText "文档质量"
+    - StaticText "9/10"
+    - StaticText "上手难度"
+    - StaticText "8/10"
+    - StaticText "社区活跃度"
+    - StaticText "10/10"
+    - StaticText "综合评分"
+    - StaticText "9/10"
+- generic
+  - button "Menu" [ref=e2]
+    - StaticText "Menu"
+  - button "Inspect" [ref=e3]
+    - StaticText "Inspect"
+  - button "Audit" [ref=e4]
+    - StaticText "Audit"
+  - button "Settings" [ref=e5]
+    - StaticText "Settings"
