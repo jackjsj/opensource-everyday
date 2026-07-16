@@ -2,7 +2,7 @@
 title: "Awesome DESIGN.md"
 description: "知名网站设计系统规范的策展集合，让 AI 编码工具一键生成视觉一致的高质量 UI"
 date: "2026-07-16"
-tags: ["design-system", "ai-coding", "documentation"]
+tags: ["设计系统", "AI编码", "文档"]
 githubUrl: "https://github.com/VoltAgent/awesome-design-md"
 language: "Markdown"
 license: "MIT"

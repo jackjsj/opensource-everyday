@@ -2,7 +2,7 @@
 title: "Redis"
 description: "高性能内存键值数据库，支持多种数据结构"
 date: "2026-07-15"
-tags: ["database", "caching", "in-memory"]
+tags: ["数据库", "缓存", "内存"]
 githubUrl: "https://github.com/redis/redis"
 language: "C"
 license: "BSD-3-Clause"
