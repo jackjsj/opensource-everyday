@@ -17,6 +17,11 @@ const { title, description } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={description || '每天一个开源项目调研报告'} />
   <title>{title} — 每天一个开源项目</title>
+  <script is:inline>
+    const t = localStorage.getItem('theme') ||
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', t);
+  </script>
 </head>
 <body>
   <Header />
