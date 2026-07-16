@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 500; letter-spacing: -0.02em; }
   gap: 20px; padding-bottom: 64px;
 }
 .report-card {
-  display: block; padding: 24px; background: var(--color-canvas-soft);
+  display: flex; flex-direction: column; height: 100%; padding: 24px; background: var(--color-canvas-soft);
   border: 1px solid var(--color-hairline); border-radius: var(--radius-lg);
   transition: border-color 0.15s, box-shadow 0.15s;
 }
@@ -81,9 +81,10 @@ h1, h2, h3, h4, h5, h6 { font-weight: 500; letter-spacing: -0.02em; }
   font-size: 13px; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);
 }
 .card-desc { font-size: 14px; color: var(--color-ink-mute); margin-bottom: 16px; line-height: 1.5; }
-.card-footer { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--color-ink-faint); }
-.tags { display: flex; gap: 6px; }
-.tag { padding: 2px 8px; background: var(--color-canvas); border: 1px solid var(--color-hairline); border-radius: var(--radius-sm); font-size: 12px; }
+.card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; font-size: 13px; color: var(--color-ink-faint); }
+.card-footer .date { white-space: nowrap; flex-shrink: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; overflow: hidden; }
+.tag { padding: 2px 8px; background: var(--color-canvas); border: 1px solid var(--color-hairline); border-radius: var(--radius-sm); font-size: 12px; white-space: nowrap; }
 
 .report-container { max-width: var(--max-width); margin: 0 auto; padding: 32px 24px 64px; }
 .report-detail { display: grid; grid-template-columns: 220px 1fr; gap: 48px; }
