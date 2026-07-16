@@ -14,5 +14,6 @@
   },
   "devDependencies": {
     "pagefind": "^1.5.2"
-  }
+  },
+  "repository": "https://github.com/jackjsj/opensource-everyday.git"
 }
