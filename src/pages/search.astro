@@ -1,15 +1,68 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const reports = await getCollection('reports');
+const indexUrl = `${import.meta.env.BASE_URL}/search-index.json`;
 ---
 
 <BaseLayout title="搜索 — 每天一个开源项目">
   <div class="search-page">
     <h1>搜索报告</h1>
-    <div id="search"></div>
-    <link href={`${import.meta.env.BASE_URL}/pagefind/pagefind-ui.css`} rel="stylesheet">
-    <script src={`${import.meta.env.BASE_URL}/pagefind/pagefind-ui.js`}></script>
-    <script>
-      new PagefindUI({ element: "#search" });
-    </script>
+    <input type="text" id="search-input" placeholder="输入关键词搜索…" autocomplete="off" />
+    <div id="search-results" class="search-results"></div>
+    <div id="search-empty" class="search-empty">输入关键词开始搜索</div>
   </div>
 </BaseLayout>
+
+<script define:vars={{ indexUrl, count: reports.length }}>
+  let reports = [];
+  const input = document.getElementById('search-input');
+  const resultsEl = document.getElementById('search-results');
+  const emptyEl = document.getElementById('search-empty');
+
+  async function loadIndex() {
+    const res = await fetch(indexUrl);
+    reports = await res.json();
+  }
+
+  function search(query) {
+    if (!query.trim()) {
+      resultsEl.innerHTML = '';
+      emptyEl.textContent = '输入关键词开始搜索';
+      emptyEl.style.display = '';
+      return;
+    }
+
+    const q = query.toLowerCase().trim();
+    const matched = reports.filter(r =>
+      r.title.toLowerCase().includes(q) ||
+      r.description.toLowerCase().includes(q) ||
+      r.tags.some(t => t.toLowerCase().includes(q))
+    );
+
+    if (matched.length === 0) {
+      resultsEl.innerHTML = '';
+      emptyEl.textContent = '没有找到匹配的报告';
+      emptyEl.style.display = '';
+      return;
+    }
+
+    emptyEl.style.display = 'none';
+    resultsEl.innerHTML = matched.map(r => `
+      <a href="${r.url}" class="search-result">
+        <div class="search-result-header">
+          <span class="search-result-title">${r.title}</span>
+          <span class="search-result-date">${r.date}</span>
+        </div>
+        <p class="search-result-desc">${r.description}</p>
+        <div class="search-result-tags">
+          ${r.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+        </div>
+      </a>
+    `).join('');
+  }
+
+  input.addEventListener('input', e => search(e.target.value));
+  loadIndex();
+</script>

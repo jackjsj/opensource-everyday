@@ -73,8 +73,14 @@ test('report detail page exists', () => {
 // Task 5 checks
 test('search page exists', () => {
   const html = readPage('search/index.html');
-  assertIncludes(html, 'pagefind', 'missing pagefind script');
-  assertIncludes(html, 'id="search"', 'missing search container');
+  assertIncludes(html, 'id="search-input"', 'missing search input');
+  assertIncludes(html, 'id="search-results"', 'missing search results container');
+});
+
+test('search index json exists', () => {
+  const json = readPage('search-index.json');
+  assertIncludes(json, 'title', 'search index should have title field');
+  assertIncludes(json, 'description', 'search index should have description field');
 });
 
 // Task 6 checks

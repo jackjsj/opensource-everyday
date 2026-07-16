@@ -5,15 +5,11 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "postbuild": "pagefind --site dist",
     "preview": "astro preview",
     "test": "node scripts/check.mjs"
   },
   "dependencies": {
     "astro": "^5.0.0"
-  },
-  "devDependencies": {
-    "pagefind": "^1.5.2"
   },
   "repository": "https://github.com/jackjsj/opensource-everyday.git"
 }
