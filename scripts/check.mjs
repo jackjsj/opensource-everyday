@@ -50,7 +50,7 @@ test('homepage lists reports', () => {
   assertIncludes(html, 'Redis', 'homepage should list Redis report');
   assertIncludes(html, 'report-card', 'missing report card class');
   assertIncludes(html, 'tag-btn', 'missing tag filter buttons');
-  assertIncludes(html, 'database', 'missing database tag');
+  assertIncludes(html, '数据库', 'missing 数据库 tag');
 });
 
 // Task 4 checks
@@ -80,7 +80,7 @@ test('search page exists', () => {
 // Task 6 checks
 test('categories page exists', () => {
   const html = readPage('categories/index.html');
-  assertIncludes(html, 'database', 'missing database category');
+  assertIncludes(html, '数据库', 'missing 数据库 category');
   assertIncludes(html, 'Redis', 'missing Redis under a category');
   assertIncludes(html, 'category-group', 'missing category group');
 });
