@@ -47,7 +47,7 @@ const sorted = [...reports].sort(
             data-community={report.data.ratings.community}
           >
             <td class={`rank ${i === 0 ? 'rank-1' : ''}`}>{i + 1}</td>
-            <td><a href={`${import.meta.env.BASE_URL}/reports/${report.id}/`}>{report.data.title}</a></td>
+            <td><a href={`${import.meta.env.BASE_URL}reports/${report.id}/`}>{report.data.title}</a></td>
             <td>{report.data.ratings.overall}</td>
             <td>{report.data.date}</td>
           </tr>

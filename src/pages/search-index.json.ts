@@ -8,7 +8,7 @@ export const GET: APIRoute = async () => {
     description: r.data.description,
     tags: r.data.tags,
     date: r.data.date,
-    url: `${import.meta.env.BASE_URL}/reports/${r.id}/`,
+    url: `${import.meta.env.BASE_URL}reports/${r.id}/`,
   }));
   return new Response(JSON.stringify(index), {
     headers: { 'Content-Type': 'application/json' }
